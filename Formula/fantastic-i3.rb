@@ -2,8 +2,8 @@ class FantasticI3 < Formula
   desc "Tiling desktop for macOS in the style of i3: yabai, skhd and SketchyBar"
   homepage "https://github.com/mejistus/fantastic-i3-app"
   url "https://github.com/mejistus/fantastic-i3-app.git",
-      tag:      "v0.1.3",
-      revision: "5cc9df04c2f447cc5a73029ea865ce561d0c5e82"
+      tag:      "v0.1.4",
+      revision: "1eb46921a19fed6ea2b32cfd97f23f4ea67944e1"
   license "GPL-3.0-or-later"
   head "https://github.com/mejistus/fantastic-i3-app.git", branch: "main"
 
@@ -47,7 +47,8 @@ class FantasticI3 < Formula
 
   test do
     ENV["FANTASTIC_I3_LANG"] = "en"
-    assert_match "Usage: fantastic-i3 <command>", shell_output("#{bin}/fantastic-i3 2>&1", 1)
+    assert_equal "fantastic-i3 #{version}", shell_output("#{bin}/fantastic-i3 --version").strip
+    assert_match "Usage: fantastic-i3 <command>", shell_output("#{bin}/fantastic-i3 --help")
     assert_match "Reload the configuration", shell_output("#{bin}/fantastic-i3 keys")
   end
 end
