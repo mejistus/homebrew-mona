@@ -2,8 +2,8 @@ class FantasticI3 < Formula
   desc "Tiling desktop for macOS in the style of i3: yabai, skhd and SketchyBar"
   homepage "https://github.com/mejistus/fantastic-i3-app"
   url "https://github.com/mejistus/fantastic-i3-app.git",
-      tag:      "v0.1.1",
-      revision: "a2a3353aacd1abcbedfa717d8b9bc5a640b0c64d"
+      tag:      "v0.1.2",
+      revision: "22973e9be5842a29bba1dcd0ace9548415b712be"
   license "GPL-3.0-or-later"
   head "https://github.com/mejistus/fantastic-i3-app.git", branch: "main"
 
@@ -25,6 +25,8 @@ class FantasticI3 < Formula
     <<~EOS
       第一次装好后运行（接好配置、启动服务、检查权限）：
         fantastic-i3 setup
+      SketchyBar 的提示（把示例配置复制到 ~/.config/sketchybar）不要照做：
+      setup 把那里接到了 fantastic-i3 的顶栏配置，复制会把它覆盖掉。
       以后 brew upgrade fantastic-i3 之后：
         fantastic-i3 restart
     EOS
