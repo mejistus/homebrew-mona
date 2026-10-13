@@ -23,12 +23,25 @@ class FantasticI3 < Formula
 
   def caveats
     <<~EOS
-      第一次装好后运行（接好配置、启动服务、检查权限）：
+      To finish the installation, run:
         fantastic-i3 setup
-      SketchyBar 的提示（把示例配置复制到 ~/.config/sketchybar）不要照做：
-      setup 把那里接到了 fantastic-i3 的顶栏配置，复制会把它覆盖掉。
-      以后 brew upgrade fantastic-i3 之后：
+
+      Setup links the configuration into ~/.config, starts yabai, skhd and
+      SketchyBar, and checks the required permissions. It is safe to run again.
+
+      Do not copy SketchyBar's example configuration into ~/.config/sketchybar,
+      as its own caveat suggests: that directory points to the fantastic-i3
+      configuration, and the example would overwrite it.
+
+      After upgrading fantastic-i3, restart the services:
         fantastic-i3 restart
+
+      Instant workspace switching requires yabai's scripting addition, which
+      needs System Integrity Protection partially disabled:
+        fantastic-i3 setup-sa
+
+      Before uninstalling, remove the links and services that setup created:
+        fantastic-i3 uninstall
     EOS
   end
 
