@@ -2,8 +2,8 @@ class FantasticI3 < Formula
   desc "Tiling desktop for macOS in the style of i3: yabai, skhd and SketchyBar"
   homepage "https://github.com/mejistus/fantastic-i3-app"
   url "https://github.com/mejistus/fantastic-i3-app.git",
-      tag:      "v0.1.13",
-      revision: "b039da14f163d4d91279f3d762a7335b3528bee3"
+      tag:      "v0.1.14",
+      revision: "d5908880d000e0f44d16b0f5ed67f74c144f9aa7"
   license "GPL-3.0-or-later"
   head "https://github.com/mejistus/fantastic-i3-app.git", branch: "main"
 
